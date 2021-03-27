@@ -1,0 +1,133 @@
+:root{
+    --skin: #f8c09c;
+    --background: #ed4042;
+    --skin-nose: #ebae89;
+    --black: #00243a;
+    --dark: #000;
+    --white: #fff;
+    --eyes: calc(150px - 70%);
+    --beard: calc(150px - 30%);
+    --teeth: 8px;
+}
+
+body{
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.head{
+    width: 100px;
+    height: 150px;
+    background: var(--skin);
+    border-radius: 50px;
+    position: relative;
+}
+
+.eyes{
+    display: flex;
+    height: var(--eyes);
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+}
+
+.eye {
+    width: 20px;
+    height: 20px;
+    background: var(--white);
+    border-radius: 50%;
+    position: relative;
+}
+
+.pupil{
+    width: 2px;
+    height: 2px;
+    background: var(--black);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.eyes:hover .pupil{
+    animation-duration: 1s;
+    animation-name: mover-pupilas;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes mover-pupilas{
+
+    from {
+        top: 50%;
+        left: 50%;
+    }
+
+    to {
+        top: 50%;
+        left: 20%;
+    }
+}
+
+.nose {
+    width: 25px;
+    height: 25px;
+    background: var(--skin-nose);
+    border-radius: 50%;
+    position:absolute;
+    z-index: 1;
+    top: 30px;
+    right: 38%;
+}
+
+.beard{
+    width: 100%;
+    height: var(--beard);
+    background: var(--black);
+    border-radius: 40%;
+    display:flex;
+    justify-content: center;
+}
+
+.mouth{
+    width: 45%;
+    background: var(--dark);
+    z-index: 1;
+    border-radius: 0 0 70% 70%;
+    margin-top: 15%;
+    animation-name: mover-boca;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+.tooth{
+    display: flex;
+    width: 98%;
+    height: var(--teeth);
+}
+
+.teeth{
+    z-index: 2;
+    background: var(--white);
+    border-radius: 10% 10% 25% 25%;
+    width: 50%;
+    border: 1px solid grey;
+}
+
+@keyframes mover-boca{
+
+    from{
+        height: 20px
+    }
+
+    to{
+        height: 10px;
+    }
+}
